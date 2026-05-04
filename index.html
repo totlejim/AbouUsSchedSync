@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - SchedSync</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* --- HERO BANNER --- */
+    .hero {
+      background-color: #0c4194;
+      padding: 30px 60px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 50px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* --- SECTIONS --- */
+    .section-white {
+      background-color: white;
+      padding: 60px;
+    }
+
+    .section-gray {
+      background-color: #f5f6fa;
+      padding: 60px;
+    }
+
+    /* --- WHO WE ARE --- */
+    .who-container {
+      display: flex;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      align-items: center;
+    }
+
+    .who-container .left,
+    .who-container .right {
+      flex: 1;
+    }
+
+    .who-container .left h2 {
+      color: #0c4194;
+      font-size: 34px;
+      margin-bottom: 15px;
+    }
+
+    .who-container .left p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .who-container .right {
+      background-color: #0c4194;
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.6;
+    }
+
+    /* --- TEAM --- */
+    .team-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .team-title {
+      color: #0c4194;
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .team-row-container {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .team-row {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .member {
+      text-align: center;
+      width: 220px;
+    }
+
+    .photo-placeholder {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background-color: #d1d5db;
+      margin: 0 auto 14px;
+    }
+
+    .member .name {
+      color: #0c4194;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .member .role {
+      color: gray;
+      font-size: 15px;
+    }
+
+    /* --- WHY WE BUILT --- */
+    .why-container {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .why-container h2,
+    .what-container h2,
+    .features-container h2,
+    .users-container h2,
+    .promise-section h2,
+    .help-container h2 {
+      color: #0c4194;
+      font-size: 34px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .why-container p,
+    .what-container > p,
+    .help-container p,
+    .promise-section p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    /* --- WHAT SCHEDSYNC DOES --- */
+    .what-container,
+    .features-container,
+    .users-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .what-container > p {
+      max-width: 850px;
+      margin: 0 auto 20px;
+    }
+
+    .goals-title {
+      color: #0c4194;
+      font-size: 30px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .goals-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .goal-card {
+      flex: 1;
+      min-width: 280px;
+      background-color: #0c4194;
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .goal-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #fffd2c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .goal-icon img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .goal-card h4 {
+      font-size: 19px;
+      margin: 0 0 10px;
+    }
+
+    .goal-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* --- KEY FEATURES --- */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 15px;
+    }
+
+    .feature-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-left: 5px solid #fffd2c;
+      border-radius: 10px;
+      padding: 20px 25px;
+    }
+
+    .feature-card h4 {
+      color: #0c4194;
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    .feature-card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #555;
+      margin: 0;
+    }
+
+    /* --- WHO CAN USE --- */
+    .users-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .user-card {
+      flex: 1;
+      min-width: 280px;
+      background-color: #0c4194;
+      color: white;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .user-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 15px;
+      background-color: #fffd2c;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .user-icon img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+    }
+
+    .user-card h4 {
+      font-size: 20px;
+      margin: 0 0 12px;
+    }
+
+    .user-card p {
+      font-size: 16px;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, 0.85);
+      text-align: left;
+      margin: 0;
+    }
+
+    /* --- OUR PROMISE --- */
+    .promise-section {
+      background-color: #fffd2c;
+      padding: 60px;
+      text-align: center;
+    }
+
+    .promise-section p {
+      max-width: 800px;
+      margin: 0 auto 15px;
+    }
+
+    /* --- HELP US IMPROVE --- */
+    .help-container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* --- FOOTER --- */
+    footer {
+      background-color: #0c4194;
+      color: white;
+      text-align: center;
+      padding: 40px 60px;
+    }
+
+    footer h3 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    footer .tagline {
+      font-style: italic;
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 20px;
+    }
+
+    footer .sub {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.7);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1>About Us - SchedSync</h1>
+  </div>
+
+  <div class="section-white">
+    <div class="who-container">
+      <div class="left">
+        <h2>Who We Are</h2>
+        <p>
+          We are a team of seven researchers and developers from the Information and Communications Technology Program at STI College Sta. Maria. This project was born out of a real problem we observed in our own school—and our desire to solve it using the skills we have been learning throughout our course.
+        </p>
+      </div>
+      <div class="right">
+        "SchedSync takes the stress out of the mix, turning messy semester schedules into smooth and simple clicks."
+      </div>
+    </div>
+  </div>
+
+  <div class="section-white">
+    <div class="team-container">
+      <h2 class="team-title">The Team Behind SchedSync</h2>
+      <div class="team-row-container">
+        <div class="team-row">
+          <div class="member"><div class="name">Nicole C. Hernandez</div><div class="role">Project Manager</div></div>
+          <div class="member"><div class="name">Jerson Pierce C. Holgado</div><div class="role">Main Developer</div></div>
+          <div class="member"><div class="name">John Michael P. Catimbang</div><div class="role">Support Developer</div></div>
+          <div class="member"><div class="name">Gerome John M. San Pablo</div><div class="role">Web Designer</div></div>
+        </div>
+        <div class="team-row">
+          <div class="member"><div class="name">Carlwyne Fritz D. Gachalian</div><div class="role">Front-End Developer</div></div>
+          <div class="member"><div class="name">Marcus Ivan R. Atienza</div><div class="role">Researcher</div></div>
+          <div class="member"><div class="name">Curt Ehrrol C. Casimiro</div><div class="role">Researcher</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-gray">
+    <div class="why-container">
+      <h2>Why We Built SchedSync</h2>
+      <p>Like many schools, STI College Sta. Maria has long relied on manual scheduling methods—spreadsheets, paper, and extensive back-and-forth communication. Through our research, we found that creating a single semester schedule takes administrators anywhere from one to two weeks, and sometimes up to a full month.</p>
+      <p>We also learned that teachers and students often receive schedule changes late—or not at all—leading to confusion, missed classes, and wasted time.</p>
+      <p><em>So we asked ourselves: What if scheduling could be simpler, faster, and more accurate?</em></p>
+      <p>That question became SchedSync.</p>
+    </div>
+  </div>
+
+  <div class="section-white">
+    <div class="what-container">
+      <h2>What SchedSync Does</h2>
+      <p>SchedSync is a web-based scheduling system designed specifically for STI College Sta. Maria. It helps administrators create organized, conflict-free schedules while giving teachers and students real-time access to the information they need.</p>
+
+      <div class="goals-title">Our system focuses on three main goals:</div>
+
+      <div class="goals-row">
+        <div class="goal-card">
+          <div class="goal-icon"><img src="check.png" alt="Check Icon" /></div>
+          <h4>Reducing Conflicts</h4>
+          <p>Automatically detects overlapping teacher assignments and double-booked rooms before schedules are published.</p>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-icon"><img src="lighting.png" alt="Lightning Icon" /></div>
+          <h4>Enhancing Efficiency</h4>
+          <p>Suggests available teachers, free rooms, or alternative time slots for faster and smarter scheduling decisions.</p>
+        </div>
+
+        <div class="goal-card">
+          <div class="goal-icon"><img src="eye.png" alt="Eye Icon" /></div>
+          <h4>Improving Transparency</h4>
+          <p>Provides all users with a clear, real-time view of schedules, room assignments, and faculty availability.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-gray">
+    <div class="features-container">
+      <h2>Key Features at a Glance</h2>
+      <div class="features-grid">
+        <div class="feature-card"><h4>Automatic Conflict Detection</h4><p>Instantly flags overlapping classes or double-booked resources as the schedule is being built.</p></div>
+        <div class="feature-card"><h4>Automatic Suggestions</h4><p>Recommends available teachers, free rooms, or alternative time slots when conflicts arise.</p></div>
+        <div class="feature-card"><h4>Faculty Page</h4><p>A dedicated view where teachers can see their weekly class schedule from a single, reliable source.</p></div>
+        <div class="feature-card"><h4>Campus Page</h4><p>A campus-wide view of all room schedules, showing class and teacher assignments throughout the week.</p></div>
+        <div class="feature-card"><h4>Upcoming Events Notifications</h4><p>Alerts users about scheduled events and room reservations so everyone stays informed.</p></div>
+        <div class="feature-card"><h4>Real-Time Updates & Download</h4><p>Changes are visible immediately to all users. Schedules can also be downloaded as PNG, PDF, or Excel files.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-white">
+    <div class="users-container">
+      <h2>Who Can Use SchedSync</h2>
+      <div class="users-row">
+        <div class="user-card">
+          <div class="user-icon">👔</div>
+          <h4>Administrators</h4>
+          <p>Have full access to create, edit, and publish schedules. They can manage rooms, assign teachers, post event notifications, and view both Faculty and Campus pages.</p>
+        </div>
+
+        <div class="user-card">
+          <div class="user-icon">👨‍🏫</div>
+          <h4>Teachers</h4>
+          <p>Cannot edit schedules but can view their assigned classes on the Faculty Page and leave comments to communicate with administrators.</p>
+        </div>
+
+        <div class="user-card">
+          <div class="user-icon">🎓</div>
+          <h4>Students</h4>
+          <p>Have view-only access. They can see class schedules, room assignments, and teacher availability on the Campus Page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="promise-section">
+    <h2>Our Promise</h2>
+    <p>SchedSync is not just a school requirement. It is our honest attempt to make daily life easier for administrators, teachers, and students.</p>
+    <p>We believe that when scheduling works, everything else in school works a little better.</p>
+  </div>
+
+  <div class="section-white">
+    <div class="help-container">
+      <h2>Help Us Improve</h2>
+      <p>SchedSync is a research-based project, and we are continuously learning from real users. Your feedback will help us improve the system for everyone.</p>
+    </div>
+  </div>
+
+  <footer>
+    <h3>SchedSync</h3>
+    <p class="tagline">SchedSync takes the stress out of the mix, turning messy semester schedules into smooth and simple clicks.</p>
+    <p class="sub"><B>Contact us: schedsync48@gmail.com</B></p>
+    <p class="sub">ITM Program (S.Y. 2025–2026) - STI College Sta. Maria</p>
+    
+  </footer>
+</body>
+</html>
